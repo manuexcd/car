@@ -6,7 +6,7 @@ node {
 	}
 
 	stage 'Docker image'
-	sh 'gradle clean build buildDocker'
+	sh 'gradle build buildDocker'
 	
 	stage 'Docker tag'
 	sh 'docker tag car manuexcd/car'

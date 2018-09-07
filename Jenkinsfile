@@ -6,7 +6,7 @@ node {
 	}
 
 	stage 'Docker image'
-	sh 'mvn clean package docker:build'
+	sh 'gradle clean build buildDocker'
 	
 	stage 'Docker tag'
 	sh 'docker tag car manuexcd/car'

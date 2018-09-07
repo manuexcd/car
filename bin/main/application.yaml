@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: car
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+server:
+  port: 8085
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka
+    region: default
+    registryFetchIntervalSeconds: 5
+    register-with-eureka: true
+    fetch-registry: true
+---
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/test
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8082/eureka
+---
+spring:
+  profiles: kubernetes
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/test
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8082/eureka

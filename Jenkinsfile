@@ -4,6 +4,9 @@ node {
 	environment {
 		DOCKER_HOST='tcp://127.0.0.1:4243'
 	}
+	
+	stage 'Clone the project'
+    git 'https://github.com/manuexcd/car'
 
 	stage 'Docker image'
 	sh 'gradle build buildDocker'

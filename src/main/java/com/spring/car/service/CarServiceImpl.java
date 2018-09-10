@@ -15,7 +15,7 @@ public class CarServiceImpl implements CarService {
 	
 	@Override
 	public String saveCar(Car car) {
-		ResponseEntity<String> response = restTemplate.postForEntity("http://carfilter/", car, String.class);
+		ResponseEntity<String> response = restTemplate.postForEntity("http://gateway/carfilter/", car, String.class);
 		
 		return response.getBody();
 	}

@@ -13,12 +13,6 @@ import org.springframework.web.client.RestTemplate;
 @EnableMongoRepositories
 public class CarApplication {
 	
-	@Bean
-	@LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
 	public static void main(String[] args) {
 		SpringApplication.run(CarApplication.class, args);
 	}
